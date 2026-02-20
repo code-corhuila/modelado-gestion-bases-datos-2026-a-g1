@@ -1,0 +1,7 @@
+
+1. ¿Qué pasaría si no definimos correctamente las claves de cada entidad desde el inicio?
+Básicamente, el sistema se vuelve un desastre técnico. Sin una Primary Key (PK) clara, terminas con registros "fantasma" o duplicados que no puedes distinguir. Por ejemplo, si solo usamos el nombre como clave y tenemos dos "Juan Pérez", ¿a cuál de los dos le estamos subiendo la nota final? Si no hay una PK única desde el diseño, luego corregir eso con la base de datos llena es un dolor de cabeza migrar los datos.
+2. ¿Qué ventajas aporta tener identificadas las entidades antes de pasar al diagrama ER formal?
+Nos da claridad mental. Antes de tirar líneas y rombos en el diagrama, identificar las entidades nos permite entender el "qué" antes del "cómo". Así evitamos confundir un atributo (como el número de salón) con una entidad (el Salón en sí). Es como hacer el bosquejo de un edificio antes de poner los planos estructurales.
+3. ¿Qué información adicional consideras crítica en un sistema académico que aún no hemos modelado?
+Faltan los Horarios y los Salones. Sin eso, el sistema solo sabe quién da qué materia, pero no sabemos ni cuándo ni dónde se encuentran. También sería vital incluir los Requisitos de grado o las Prerrequisitos de las materias para que un estudiante no se matricule en "Cálculo III" sin haber pasado "Cálculo II".

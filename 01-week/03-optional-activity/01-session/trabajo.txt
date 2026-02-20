@@ -1,5 +1,0 @@
-¿Qué criterios usaría para decidir cuándo migrar de archivos planos a un SGBD?
-
-1. Cuándo la cantidad de registros es bastante ámplia. 
-2. Cuándo son muchas personas las que manipulan de los datos
-3. Latencia de respuesta cuando se desea consultar cierta información
