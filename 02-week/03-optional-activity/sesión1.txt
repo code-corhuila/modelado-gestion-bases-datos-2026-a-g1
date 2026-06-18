@@ -1,0 +1,157 @@
+ sesión1
+
+1) “Estudiante cursa Asignatura”
+
+📌 Qué representa:
+Un estudiante puede cursar varias asignaturas y una asignatura puede ser cursada por varios estudiantes.
+
+🔁 Relación: cursa
+📌 Cardinalidad: N : M (muchos a muchos)
+
+🧾 Atributos de la relación:
+
+fecha_inscripción: fecha en la que el estudiante se inscribió a esa asignatura.
+
+nota_final: nota final obtenida en esa asignatura.
+
+estado: puede ser “Aprobado”, “Reprobado”, “En curso”, etc.
+
+
+✅ Interpretación:
+La relación guarda datos propios del acto de cursar, no del estudiante ni de la asignatura.
+
+
+
+2) “Docente dicta Asignatura”
+
+📌 Qué representa:
+Un docente dicta una o varias asignaturas.
+
+🔁 Relación: dicta
+📌 Cardinalidad: 1 : N
+
+1 docente puede dictar muchas asignaturas.
+
+cada asignatura (según este modelo) es dictada por 1 docente.
+
+
+🧾 Atributos de la relación:
+
+periodo: por ejemplo 2026-1, 2026-2…
+
+horario: hora o bloque en el que se dicta.
+
+grupo: grupo de la asignatura (A, B, 01, 02, etc.)
+
+
+✅ Interpretación:
+La asignatura se ofrece por periodos, grupos y horarios, y todo eso depende de la relación “dicta”.
+
+
+
+
+3) “Estudiante pertenece a Programa”
+
+📌 Qué representa:
+Un estudiante pertenece a un programa académico.
+
+🔁 Relación: pertenece a
+📌 Cardinalidad: N : 1
+
+muchos estudiantes pueden estar en un mismo programa
+
+un estudiante pertenece a un solo programa
+
+
+🧾 Atributos de la relación:
+
+fecha_ingreso: fecha en la que entró al programa.
+
+estado_matricula: activo, inactivo, egresado, suspendido, etc.
+
+
+✅ Interpretación:
+Estos datos no son del programa en sí, sino del vínculo del estudiante con el programa.
+
+
+
+
+4) “Entidad ESTUDIANTE”
+
+📌 Qué representa:
+Es el modelo completo de la entidad ESTUDIANTE con sus atributos.
+
+🧾 Atributos principales:
+
+código_estudiante (subrayado): es la clave primaria, identifica al estudiante.
+
+primer_nombre
+
+apellidos
+
+fecha_nacimiento
+
+
+📩 correos (doble óvalo):
+Significa que es un atributo multivaluado (puede tener varios correos).
+
+🏠 dirección (doble óvalo y con subatributos): Es un atributo compuesto, porque se divide en:
+
+calle
+
+ciudad
+
+departamento
+
+
+👤 edad (óvalo punteado): Es un atributo derivado, porque se calcula con la fecha de nacimiento.
+
+✅ Interpretación:
+Este diagrama explica cómo se guardan los datos de un estudiante en una base de datos.
+
+
+
+
+5) “Autor escribe Libro”
+
+📌 Qué representa:
+Un autor puede escribir varios libros y un libro puede tener varios autores.
+
+🔁 Relación: escribe
+📌 Cardinalidad: N : N (muchos a muchos)
+
+✅ Interpretación:
+Ejemplo:
+
+Gabriel García Márquez → muchos libros
+
+Un libro puede tener 2 o más autores
+
+
+
+6) “Préstamo de Libro”
+
+📌 Qué representa:
+Un usuario realiza préstamos de libros.
+
+🔁 Relación: PRÉSTAMO
+📌 Cardinalidad: 1 : N
+
+1 usuario puede tener muchos préstamos
+
+cada préstamo está asociado a un libro (según el modelo)
+
+
+🧾 Atributos del préstamo:
+
+fecha préstamo
+
+fecha devolución
+
+estado (prestado, devuelto, retrasado, perdido, etc.)
+
+
+✅ Interpretación:
+El préstamo es el evento que une al usuario con el libro, y por eso sus datos van en la relación.
+
+
